@@ -13,6 +13,9 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+    public Cliente() {
+    }
+
     public int getId() {
         return id++;
     }
@@ -64,9 +67,11 @@ public class Cliente {
         this.email = email;
     }
 
-//    public static boolean emailValido(String email){
-//
-//    }
+    public static boolean emailValido(String email){
+        boolean checkEmail = (email.contains("@")) ? true : false;
+        return checkEmail;
+
+    }
 
     public String getTelefone() {
         return telefone;
@@ -76,9 +81,11 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-//    public static boolean telefoneValido(String telefone){
-//
-//    }
+    public static boolean telefoneValido(String telefone){
+        String checkTel = telefone.replace(" ", "").replace("-","");
+        boolean resultado = (checkTel.length()==11)? true : false;
+        return resultado;
+    }
 
     @Override
     public String toString() {
